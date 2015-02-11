@@ -17,5 +17,5 @@
             <tt>web.xml</tt>.</p>
     </body>
     
-    <a href="home.htm">User List</a>
+    <a href="addUser">Add User</a>
 </html>

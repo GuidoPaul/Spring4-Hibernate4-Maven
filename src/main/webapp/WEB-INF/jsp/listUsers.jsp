@@ -16,16 +16,15 @@
         <div align="center">
             <h1>User List</h1>
             <table border="1">
-                <th>User_Id</th>
-                <th>Username</th>
-                <th>Email</th>
-                 
-                <c:forEach var="user" items="${userList}" varStatus="status">
                 <tr>
-                    <td>${status.index + 1}</td>
-                    <td>${user.username}</td>
-                    <td>${user.email}</td>
+                    <th>Username</th>
+                    <th>Email</th>
                 </tr>
+                <c:forEach items="${userLists}" var="user">
+                    <tr>
+                        <td>${user.username}</td>
+                        <td>${user.email}</td>
+                    </tr>
                 </c:forEach>
             </table>
         </div>
