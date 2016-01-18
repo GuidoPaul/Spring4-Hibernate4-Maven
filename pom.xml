@@ -14,126 +14,112 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencyManagement>
+        <!-- Maven supports the concept of a "bill of materials" (BOM) dependency.
+        You can import the spring-framework-bom in your dependencyManagement section
+        to ensure that all spring dependencies (both direct and transitive)
+        are at the same version. -->
+        <!-- An added benefit of using the BOM is that you no longer need to specify
+        the <version> attribute when depending on Spring Framework artifacts-->
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>4.0.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>org-apache-commons-logging</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>cglib-2.2</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-aop-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-aspects-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-beans-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-build-src-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <!-- A common choice might be to bridge Spring to SLF4J,
+            and then provide explicit binding from SLF4J to Log4J. -->
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-context-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-context-support-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-instrument</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-core-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-instrument-tomcat</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-expression-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-framework-bom-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-instrument-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-instrument-tomcat-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-jdbc-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-jms-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-messaging-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-orm-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-oxm-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-test-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc-portlet</artifactId>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-tx-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-web-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-webmvc-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-webmvc-portlet-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>spring-websocket-4.0.1.RELEASE</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
@@ -151,9 +137,9 @@
             <version>4.3.1.Final</version>
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>hibernate-jpa-2.1-api-1.0.0.Final</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -163,7 +149,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.0.12</version>
+            <version>1.0.15</version>
         </dependency>
         <dependency>
             <groupId>aopalliance</groupId>
@@ -176,9 +162,29 @@
             <version>2.9.0</version>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.12</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
+            <version>7.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -188,10 +194,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
@@ -200,7 +206,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.1.1</version>
+                <version>2.3</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
@@ -208,7 +214,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.1</version>
+                <version>2.6</version>
                 <executions>
                     <execution>
                         <phase>validate</phase>
@@ -222,7 +228,7 @@
                                 <artifactItem>
                                     <groupId>javax</groupId>
                                     <artifactId>javaee-endorsed-api</artifactId>
-                                    <version>6.0</version>
+                                    <version>7.0</version>
                                     <type>jar</type>
                                 </artifactItem>
                             </artifactItems>
@@ -232,11 +238,4 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>unknown-jars-temp-repo</id>
-            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
-            <url>file:${project.basedir}/lib</url>
-        </repository>
-    </repositories>
 </project>
